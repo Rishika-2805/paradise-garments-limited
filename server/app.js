@@ -4,6 +4,8 @@ const express = require("express");
 
 // Create Express application
 const app = express();
+// Parse JSON Request Body
+app.use(express.json());
 
 // Import Product Routes
 const productRoutes = require("./routes/productRoutes");
