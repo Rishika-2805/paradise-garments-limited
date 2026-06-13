@@ -1,67 +1,51 @@
 // Get All Products
+const Product = require("../models/Product");
+// Get All Products
+const getAllProducts = async (req, res) => {
 
-const getAllProducts = (req, res) => {
+    try {
 
-    const products = [
-        {
-            id: 1,
-            name: "School Uniform",
-            type: "Educational"
-        },
-        {
-            id: 2,
-            name: "Nurse Uniform",
-            type: "Medical"
-        },
-        {
-            id: 3,
-            name: "Security Uniform",
-            type: "Workers"
-        }
-    ];
+        const products = await Product.find();
 
-    res.json(products);
+        res.json(products);
+
+    } catch (error) {
+
+        res.status(500).json({
+            message: error.message
+        });
+
+    }
 
 };
 
 
 // Get Single Product
 
-const getProductById = (req, res) => {
+// Get Single Product
+const getProductById = async (req, res) => {
 
-    const productId = parseInt(req.params.id);
+    try {
 
-    const products = [
-        {
-            id: 1,
-            name: "Schools/Colleges Uniform",
-            type: "Educational"
-        },
-        {
-            id: 2,
-            name: "Medical Uniform",
-            type: "Medical"
-        },
-        {
-            id: 3,
-            name: "Workers Uniform",
-            type: "Other Workers"
+        const product = await Product.findById(req.params.id);
+
+        if (!product) {
+
+            return res.status(404).json({
+                message: "Product not found"
+            });
+
         }
-    ];
 
-    const product = products.find((product) => {
-        return product.id === productId;
-    });
+        res.json(product);
 
-    if (!product) {
+    } catch (error) {
 
-        return res.status(404).json({
-            message: "Product not found"
+        res.status(500).json({
+            message: error.message
         });
 
     }
-
-    res.json(product);
 
 };
 

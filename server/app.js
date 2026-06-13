@@ -1,3 +1,4 @@
+require("dotenv").config();
 // Import Express framework
 const express = require("express");
 
@@ -6,8 +7,8 @@ const app = express();
 
 // Import Product Routes
 const productRoutes = require("./routes/productRoutes");
-
-
+const connectDB = require("./config/db");
+connectDB();
 // Home Route
 app.get("/", (req, res) => {
 
@@ -23,8 +24,8 @@ app.use("/products", productRoutes);
 
 
 // Start Server
-app.listen(5000, () => {
+app.listen(process.env.PORT, () => {
 
-    console.log("Server running on port 5000");
+    console.log(`Server running on port ${process.env.PORT}`);
 
 });
