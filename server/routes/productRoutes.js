@@ -3,6 +3,7 @@ const express = require("express");
 
 const router = express.Router();
 
+const { protect } = require("../middleware/authMiddleware");
 
 // Import Controller Functions
 const {
@@ -18,13 +19,13 @@ const {
 
 router.get("/", getAllProducts);
 
-router.post("/", createProduct);
+router.post("/", protect, createProduct);
 
 router.get("/:id", getProductById);
 
-router.put("/:id", updateProduct);
+router.put("/:id", protect,  updateProduct);
 
-router.delete("/:id", deleteProduct);
+router.delete("/:id", protect, deleteProduct);
 
 // Export Router
 module.exports = router;

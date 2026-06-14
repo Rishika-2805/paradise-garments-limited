@@ -37,11 +37,6 @@ const productSchema = new mongoose.Schema({
                 required: true
             },
 
-            sizes: [
-                {
-                    type: String
-                }
-            ]
         }
     ]
 
