@@ -1,34 +1,37 @@
+console.log("🔥 createInquiry API HIT");
 // Import Inquiry Model
 const Inquiry = require("../models/Inquiry");
 
+// generate random tracking ID
+const generateTrackingId = () => {
+  return "TRK-" + Math.random().toString(36).substring(2, 10).toUpperCase();
+};
 
-// Create Inquiry
 const createInquiry = async (req, res) => {
+  try {
+    console.log("🔥 createInquiry API HIT");
+    console.log("BODY:", req.body);
 
-    try {
+    const newInquiry = new Inquiry({
+      ...req.body,
+      trackingId: generateTrackingId() // ✅ FIX HERE
+    });
 
-        // Count existing inquiries
-        const count = await Inquiry.countDocuments();
+    await newInquiry.save();
 
-        // Generate Tracking ID
-        const trackingId = `PGL-${String(count + 1).padStart(4, "0")}`;
+    res.status(201).json({
+      message: "Inquiry submitted successfully",
+      trackingId: newInquiry.trackingId
+    });
 
-        // Create Inquiry
-        const inquiry = await Inquiry.create({
-            ...req.body,
-            trackingId
-        });
+  } catch (error) {
+    console.error("❌ ERROR:", error);
+    res.status(500).json({ message: "Server Error" });
+  }
+};
 
-        res.status(201).json(inquiry);
-
-    } catch (error) {
-
-        res.status(500).json({
-            message: error.message
-        });
-
-    }
-
+module.exports = {
+  createInquiry
 };
 
 // Get All Inquiries

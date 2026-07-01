@@ -1,0 +1,157 @@
+/* ===== GLOBAL NAVBAR ===== */
+.navbar {
+  width: 100%;
+  height: 80px;
+  padding: 0 8%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Inter", sans-serif;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* ===== LOGO ===== */
+.logo img {
+  height: 60px;
+  object-fit: contain;
+}
+
+/* ===== NAV LINKS ===== */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  font-size: 16px;
+  font-weight: 500;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1e293b;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Hover underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background-color: #f59e0b;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #0a2540;
+}
+
+/* ===== DROPDOWN ===== 
+.nav-links .dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 260px;
+  border-radius: 10px;
+  padding: 10px 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.dropdown-menu li {
+  padding: 12px 20px;
+}
+
+.dropdown-menu li a {
+  color: #334155;
+  font-size: 14px;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f8fafc;
+}
+
+
+.nav-links .dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+} 
+*/
+
+/* ===== RIGHT SIDE ===== */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* WhatsApp */
+.whatsapp-icon img {
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-icon img:hover {
+  transform: scale(1.1);
+}
+
+/* Contact Info */
+.contact-inf {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.2;
+}
+
+/* ===== CTA BUTTON ===== */
+.enquire-btn {
+  background: #0a2540;
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.enquire-btn:hover {
+  background: #020617;
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+  .contact-inf {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+}

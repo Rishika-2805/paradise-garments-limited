@@ -52,21 +52,29 @@ const getProductById = async (req, res) => {
 // Create Product
 
 const createProduct = async (req, res) => {
-
     try {
 
-        const product = await Product.create(req.body);
+        const {
+            name,
+            type,
+            description,
+            sizeOptions,
+            images
+        } = req.body;
+
+        const product = await Product.create({
+            name,
+            type,
+            description,
+            sizeOptions,
+            images
+        });
 
         res.status(201).json(product);
 
     } catch (error) {
-
-        res.status(500).json({
-            message: error.message
-        });
-
+        res.status(500).json({ message: error.message });
     }
-
 };
 // Update Product
 

@@ -1,0 +1,138 @@
+/* ===== GOOGLE FONT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ===== FOOTER BASE ===== */
+.footer {
+  background: #f8f9fb;
+  border-top: 1px solid #e4e6eb;
+  margin-top: 80px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== CONTAINER ===== */
+.footer-container {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr;
+  gap: 50px;
+  padding: 70px 80px;
+}
+
+/* ===== HEADINGS ===== */
+.footer-column h4 {
+  color: #1f2937; /* dark gray */
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  position: relative;
+}
+
+/* small underline */
+.footer-column h4::after {
+  content: "";
+  width: 30px;
+  height: 3px;
+  background: #0a7c3e;
+  display: block;
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+/* ===== TEXT ===== */
+.footer-column p {
+  color: #6b7280;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+/* ===== CONTACT ===== */
+.footer-contact {
+  margin-top: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.footer-contact.email {
+  margin-top: 20px;
+}
+
+/* ===== ICON ===== */
+.icon {
+  color: #0a7c3e;
+  margin-right: 8px;
+}
+
+/* ===== LINKS ===== */
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #4b5563;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #0a7c3e;
+  padding-left: 5px;
+}
+
+/* ===== SOCIAL ICONS ===== */
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #374151;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* hover animation */
+.social-icons a:hover {
+  background: #0a7c3e;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== BOTTOM BAR ===== */
+.footer-bottom {
+  border-top: 1px solid #e5e7eb;
+  padding: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: #6b7280;
+  background: #f1f3f6;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1000px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    padding: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+  }
+}
