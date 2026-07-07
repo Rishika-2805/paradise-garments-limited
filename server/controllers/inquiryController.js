@@ -9,12 +9,10 @@ const generateTrackingId = () => {
 
 const createInquiry = async (req, res) => {
   try {
-    console.log("🔥 createInquiry API HIT");
-    console.log("BODY:", req.body);
-
     const newInquiry = new Inquiry({
       ...req.body,
-      trackingId: generateTrackingId() // ✅ FIX HERE
+      designFile: req.file ? req.file.filename : null,
+      trackingId: generateTrackingId()
     });
 
     await newInquiry.save();
@@ -25,7 +23,7 @@ const createInquiry = async (req, res) => {
     });
 
   } catch (error) {
-    console.error("❌ ERROR:", error);
+    console.error(error);
     res.status(500).json({ message: "Server Error" });
   }
 };

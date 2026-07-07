@@ -53,6 +53,11 @@ const Products = () => {
             <h3>{item.name}</h3>
             <p>{item.type}</p>
             <p>{item.description}</p>
+            {item.sizeOptions && item.sizeOptions.map((opt, index) => (
+  <p key={index}>
+    <b>{opt.region}:</b> {opt.sizes.join(", ")}
+  </p>
+))}
 
           </div>
         ))}

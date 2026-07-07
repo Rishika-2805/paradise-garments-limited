@@ -23,10 +23,11 @@ const AdminLogin = () => {
       });
 
       const data = await res.json();
+      console.log("LOGIN DATA:",data);
 
       if (res.ok) {
         // Save token
-        localStorage.setItem("adminToken", data.token);
+        localStorage.setItem("token",data.token);
 
         alert("Login successful");
 

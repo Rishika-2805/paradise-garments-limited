@@ -66,7 +66,7 @@ const Footer = () => {
     <Link to="/products">products</Link>
   </li>
   <li>
-    <Link to="/contacts">contacts</Link>
+    <Link to="/contact">contacts</Link>
   </li>
   <li>
     <Link to="/inquiry">inquiry</Link>
@@ -87,7 +87,7 @@ const Footer = () => {
 
           <div className="social-icons">
             <a
-              href="https://www.facebook.com/profile.php?id=61590596722817"
+              href="https://www.facebook.com"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
@@ -96,7 +96,7 @@ const Footer = () => {
             </a>
 
             <a
-              href="https://www.instagram.com/stitchandsew.pvtltd/"
+              href="https://www.instagram.com"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"

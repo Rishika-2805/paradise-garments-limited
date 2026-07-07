@@ -4,6 +4,16 @@ const express = require("express");
 const router = express.Router();
 
 const { protect } = require("../middleware/authMiddleware");
+const multer = require("multer");
+
+const storage = multer.diskStorage({
+  destination: "uploads/",
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + "-" + file.originalname);
+  }
+});
+
+const upload = multer({ storage });
 
 // Import Controller Functions
 const {
@@ -17,9 +27,9 @@ const {
 
 // Routes
 
-router.post("/", createInquiry);
+router.post("/", upload.single("designFile"), createInquiry);
 
-router.get("/", protect ,getAllInquiries);
+router.get("/",protect,getAllInquiries);
 
 router.get("/track/:trackingId", trackInquiry);
 

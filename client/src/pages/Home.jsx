@@ -62,7 +62,7 @@ function Home() {
        <button className="primary-btn" onClick={() => navigate("/products")}>
               Explore Products
             </button>
-            <button className="secondary-btn" onClick={() => navigate("/Contact")}>
+            <button className="secondary-btn" onClick={() => navigate("/inquiry")}>
               Enquire Now
             </button>
     </div>
@@ -76,7 +76,7 @@ function Home() {
         <h2>Shopping Corner</h2>
         <p>Explore our business solutions</p>
 
-        <Link to="/shop#uniforms" className="shop-now">
+        <Link to="/products" className="shop-now">
           Shop Now →
         </Link>
       </div>
@@ -86,31 +86,31 @@ function Home() {
         <div className="scroll-track">
           
           {/* Duplicate images for smooth loop */}
-          <Link to="/shop#uniforms" className="shop-card">
+          <Link to="/products" className="shop-card">
             <img src="/images/School uniforms.png" alt="Uniforms" />
             <h4> School Uniforms</h4>
           </Link>
 
-          <Link to="/shop#chemicals" className="shop-card">
+          <Link to="/products" className="shop-card">
             <img src="/images/corporate uniforms.png" alt="Chemicals" />
             <h4>corporate Uniforms</h4>
           </Link>
 
-          <Link to="/shop#education" className="shop-card">
+          <Link to="products" className="shop-card">
             <img src="/images/Hospital uniforms.png" alt="Education" />
             <h4>Hospital Uniforms</h4>
           </Link>
 
           {/* repeat for infinite effect */}
-          <Link to="/shop#uniforms" className="shop-card">
+          <Link to="/products" className="shop-card">
             <img src="/images/hotel uniforms.png" alt="Uniforms" />
             <h4> Hotel Uniforms</h4>
           </Link>
-          <Link to="/shop#uniforms" className="shop-card">
+          <Link to="/products" className="shop-card">
             <img src="/images/workwear uniforms.jpeg" alt="Uniforms" />
             <h4> Workwear Uniforms</h4>
           </Link>
-          <Link to="/shop#uniforms" className="shop-card">
+          <Link to="/products" className="shop-card">
             <img src="/images/security uniforms.jpg" alt="Uniforms" />
             <h4> Security and officers Uniforms</h4>
           </Link>

@@ -42,44 +42,39 @@ const Inquiry = () => {
   };
 
   // HANDLE SUBMIT
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    try {
-      const res = await fetch("http://localhost:5000/api/inquiry", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
-      });
+  try {
+    const form = new FormData();
 
-      const data = await res.json();
+    // append all fields
+    Object.keys(formData).forEach((key) => {
+      form.append(key, formData[key]);
+    });
 
-      if (res.ok) {
-        alert("Inquiry submitted successfully");
-        console.log(data);
-
-        setFormData({
-          companyName: "",
-          contactPersonFirstName: "",
-          contactPersonMiddleName: "",
-          contactPersonLastName: "",
-          email: "",
-          phone: "",
-          country: "",
-          productInterested: "",
-          customDesignRequired: false,
-          requirements: ""
-        });
-      } else {
-        alert(data.message || "Something went wrong");
-      }
-    } catch (err) {
-      console.error(err);
-      alert("Error submitting inquiry");
+    // append file
+    if (file) {
+      form.append("designFile", file);
     }
-  };
+
+    const res = await fetch("http://localhost:5000/api/inquiry", {
+      method: "POST",
+      body: form
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      alert("Inquiry submitted successfully");
+      console.log(data);
+    } else {
+      alert(data.message || "Something went wrong");
+    }
+  } catch (err) {
+    console.error(err);
+  }
+};
 
   return (
     <section className="inquiry-container container">
