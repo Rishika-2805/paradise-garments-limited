@@ -11,13 +11,13 @@ const ManageProduct = () => {
   }, []);
 
   const fetchProducts = async () => {
-    const res = await axios.get("http://localhost:5000/api/products");
+    const res = await axios.get("https://paradise-garments-limited.onrender.com/api/products");
     setProducts(res.data);
   };
 
   const deleteProduct = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/products/${id}`);
+      await axios.delete(`https://paradise-garments-limited.onrender.com/api/products/${id}`);
       alert("Deleted successfully");
       fetchProducts();
     } catch (err) {
@@ -48,7 +48,7 @@ const ManageProduct = () => {
                 <td>
                   {p.images && (
                     <img
-                      src={`http://localhost:5000/${p.images[0]}`}
+                      src={`https://paradise-garments-limited.onrender.com/${p.images[0]}`}
                       width="60"
                       alt=""
                     />

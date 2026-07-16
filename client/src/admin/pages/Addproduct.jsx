@@ -34,7 +34,7 @@ const AddProduct = () => {
       formData.append("designFile", image);
 
       const uploadRes = await axios.post(
-        "http://localhost:5000/upload",
+        "https://paradise-garments-limited.onrender.com/upload",
         formData
       );
 
@@ -42,7 +42,7 @@ const AddProduct = () => {
       const sizeArray = form.sizes.split(",");
 
       await axios.post(
-        "http://localhost:5000/api/products",
+        "https://paradise-garments-limited.onrender.com/api/products",
         {
           name: form.name,
           type: form.type,

@@ -21,7 +21,7 @@ const AdminDashboard = () => {
 
   const fetchStats = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/inquiry");
+      const res = await axios.get("https://paradise-garments-limited.onrender.com/api/inquiry");
       setStats({
         totalInquiries: res.data.length,
       });

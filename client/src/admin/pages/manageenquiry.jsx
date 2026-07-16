@@ -11,7 +11,7 @@ const ManageEnquiry = () => {
   }, []);
 
   const fetchData = async () => {
-    const res = await axios.get("http://localhost:5000/api/inquiry");
+    const res = await axios.get("https://paradise-garments-limited.onrender.com/api/inquiry");
 
     console.log(res.data);
     setData(res.data);

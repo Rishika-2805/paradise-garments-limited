@@ -12,7 +12,7 @@ const Products = () => {
   const fetchProducts = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/products"
+        "https://paradise-garments-limited.onrender.com/api/products"
       );
 
       setProducts(res.data);
@@ -44,7 +44,7 @@ const Products = () => {
             {/* IMAGE */}
             {item.images && item.images.length > 0 && (
               <img
-                src={`http://localhost:5000/${item.images[0]}`}
+                src={`https://paradise-garments-limited.onrender.com/${item.images[0]}`}
                 alt="product"
                 style={{ width: "100%", height: "150px", objectFit: "cover" }}
               />

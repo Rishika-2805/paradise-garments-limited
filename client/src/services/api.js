@@ -1,5 +1,5 @@
 // API Base URL
-const BASE_URL = "http://localhost:5000/api";
+const BASE_URL = "https://paradise-garments-limited.onrender.com/api";
 
 // CREATE INQUIRY API
 export const createInquiry = async (formData) => {
