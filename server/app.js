@@ -8,11 +8,7 @@ const path = require("path");
 // Create Express application
 const app = express();
 // Parse JSON Request Body
-app.use(cors({
-  origin: "http://localhost:5173",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
+app.use(cors());
 app.use(express.json());
 app.use(
     "/uploads",
@@ -54,8 +50,10 @@ app.get("/", (req, res) => {
 
 
 // Start Server
-app.listen(process.env.PORT, () => {
+const PORT = process.env.PORT || 5000;
 
-    console.log(`Server running on port ${process.env.PORT}`);
+app.listen(PORT, () => {
+
+    console.log(`Server running on port ${PORT}`);
 
 });
